@@ -1,0 +1,38 @@
+/* Footer Styles */
+
+footer.sticky-footer {
+    width: 100%; /* Full width */
+    background-color: #ffffff; /* White background */
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Positioned at the bottom */
+    z-index: 9999; /* Higher z-index to ensure it stays on top of other content */
+}
+
+/* Container Styles */
+
+.container {
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Maximum width for content */
+    margin: 0 auto; /* Centers the container horizontally */
+    padding: 0 15px; /* Padding on the sides */
+}
+
+/* Text Styles */
+
+.text-center {
+    text-align: center; /* Centers the text horizontally */
+}
+
+.copyright {
+    padding: 10px 0; /* Padding top and bottom */
+    font-size: 0.9rem; /* Adjust font size as needed */
+    color: #777777; /* Text color */
+}
+
+/* Media Query (Optional: For responsiveness) */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px; /* Adjusted padding for smaller screens */
+    }
+}

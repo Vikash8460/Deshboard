@@ -1,0 +1,113 @@
+<div class="container-fluid page">
+    <div class="row">
+        <div class="col-12">
+            <!-- Use Bootstrap's d-flex and justify-content-between for responsiveness -->
+            <div class="d-flex justify-content-between align-items-center page__box p-3 mt-2">
+                <h2> Add Customer</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uncomment the following if you want to add a shadowed content box -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page__content shadow p-3 mt-3">
+                <div class="position-relative">
+                    <div class="add-customer-form container">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>First Name</mat-label>
+                                    <input matInput formControlName="firstname" type="text" required>
+                                    <!-- <mat-error If="addCustomerForm.get('firstname').hasError('required')">First Name is
+                                        required</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Last Name</mat-label>
+                                    <input matInput formControlName="lastname" type="text" required>
+                                    <!-- <mat-error If="addCustomerForm.get('lastname').hasError('required')">Last Name is
+                                        required</mat-error> -->
+                                </mat-form-field>
+                            </div>
+                            
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput formControlName="email" type="email" required>
+                                    <!-- <mat-error If="addCustomerForm.get('email').hasError('required')">Email is
+                                        required</mat-error> -->
+                                    <!-- <mat-error If="addCustomerForm.get('email').hasError('required')">Email must be a valid email address</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Mobile No</mat-label>
+                                    <input matInput formControlName="moblieno" type="number" required>
+                                    <!-- <mat-error If="addCustomerForm.get('moblieno').hasError('required')">Mobile No is
+                                        required</mat-error> -->
+                                    <!-- <mat-error *ngIf="addCustomerForm.get('moblieno').hasError('maxlength')">Only 10
+                                        numbers</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>City</mat-label>
+                                    <input matInput formControlName="city" type="text" required>
+                                    <!-- <mat-error If="addCustomerForm.get('city').hasError('required')">City is
+                                        required</mat-error> -->
+
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Pin Code</mat-label>
+                                    <input matInput formControlName="pincode" type="number" required>
+                                    <!-- <mat-error If="addCustomerForm.get('pincode').hasError('required')">Pin code is
+                                        required</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Texts</mat-label>
+                                    <input matInput formControlName="text" type="text" required>
+                                    <!-- <mat-error If="addCustomerForm.get('text').hasError('required')">Texts is
+                                        required</mat-error> -->
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field appearance="fill" class="w-100">
+                                    <mat-label>Date</mat-label>
+                                    <input matInput [matDatepicker]="picker" formControlName="date" type="datetime" required>
+                                    <!-- <mat-error If="addCustomerForm.get('date').hasError('required')">Date is
+                                        required</mat-error> -->
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                            <!-- <div class="col-12">
+                                <button mat-raised-button color="primary" type="submit" class="btn btn-primary"
+                                    [disabled]="!addCustomerForm.valid">Add Customer</button>
+                            </div> -->
+                            <div class="col-12">
+                                <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Add
+                                    Customer</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

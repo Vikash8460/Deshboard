@@ -1,0 +1,138 @@
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    &__box {
+      min-height: 20px;
+      background: #917996;
+      margin: 0 -1rem;
+      font-size: 36px;
+    }
+    &__content {
+      min-height: calc(100vh - 178px);
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 2rem;
+      &-data {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  
+ /* General body styling */
+body {
+    background: #f8f9fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+/* Container and rounding */
+.container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+/* Profile image styling */
+img.rounded-circle {
+    border: 3px solid #adb5bd;
+    padding: 3px;
+}
+
+/* General text and font styling */
+.font-weight-bold {
+    color: #495057;
+}
+
+.text-black-50 {
+    color: #6c757d !important;
+}
+
+.labels {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Input fields styling */
+input.form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Experience section styling */
+.add-experience {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .border-right {
+        border-right: 0;
+    }
+}
+
+/* Spacing and padding adjustments */
+.p-3 {
+    padding: 1rem !important;
+}
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.mt-5, .my-5 {
+    margin-top: 3rem !important;
+}
+
+.mb-5, .my-5 {
+    margin-bottom: 3rem !important;
+}
+
+/* Adjustments for alignment and display */
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+/* Experience edit button */
+.add-experience i {
+    margin-right: 5px;
+}

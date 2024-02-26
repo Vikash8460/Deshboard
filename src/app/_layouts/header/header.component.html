@@ -1,0 +1,70 @@
+<mat-toolbar>
+  <div class="container-fluid">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-auto">
+        <button mat-icon-button (click)="toggleSidebar()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+      <!-- <div class="col-auto" style="margin-left: 50%;">
+        <mat-menu #alertsMenu="matMenu">
+          <button mat-menu-item>Alert 1</button>
+          <button mat-menu-item>Alert 2</button>
+          <button mat-menu-item>Alert 3</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="alertsMenu">
+          <mat-icon>notifications</mat-icon>
+          <span class="badge badge-pill badge-danger" style="color: red;">3+</span>
+        </button>
+      </div>
+      
+      <div class="col-auto">
+        <mat-menu #messagesMenu="matMenu">
+          <button mat-menu-item>Message 1</button>
+          <button mat-menu-item>Message 2</button>
+          <button mat-menu-item>Message 3</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="messagesMenu">
+          <mat-icon>email</mat-icon>
+          <span class="badge badge-pill badge-danger" style="color: red;">7</span>
+        </button>
+      </div> -->
+      
+      <div class="col-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item">
+            <button mat-button [matMenuTriggerFor]="menu" class="user d-flex align-items-center">
+              <img src="assets/img/undraw_profile.svg" alt="" class="user-image mr-1 p-2" />
+              <span>Vikash Kamat</span>
+              <mat-icon class="ml-1">keyboard_arrow_down</mat-icon>
+            </button>
+
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/admin/profile">
+                <mat-icon>person</mat-icon>
+                <span>Profile</span>
+              </button>
+
+              <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+              </button>
+
+              <button mat-menu-item>
+                <mat-icon>subject</mat-icon>
+                <span>Activity Log</span>
+              </button>
+              <hr>
+
+              <button mat-menu-item>
+                <mat-icon>logout</mat-icon>
+                <span (click)="logout()"> Logout</span>
+              </button>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

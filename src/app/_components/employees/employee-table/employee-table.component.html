@@ -1,0 +1,69 @@
+<div class="container-fluid page">
+  <div class="row">
+      <div class="col-12">
+          <!-- Use Bootstrap's d-flex and justify-content-between for responsiveness -->
+          <div class="d-flex justify-content-between align-items-center page__box p-3 mt-2">
+              <h2> Add Customer</h2>
+          </div>
+      </div>
+  </div>
+  
+    <div class="container mt-3">
+      <mat-form-field class="w-100">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+  
+      <div class="table-container mt-3">
+        <!-- Add 'table-responsive' class to the container -->
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataSource" matSort class="table">
+            <!-- ID Column -->
+            <ng-container matColumnDef="sn">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Sn. No. </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+  
+            <!-- Progress Column -->
+            <ng-container matColumnDef="moblieno">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Moblie Noame </th>
+              <td mat-cell *matCellDef="let row"> {{row.moblieno}}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="text">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Texts</th>
+              <td mat-cell *matCellDef="let row"> {{row.text}}</td>
+            </ng-container>
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Date/Time</th>
+              <td mat-cell *matCellDef="let row"> {{row.date | date:"MMM dd, yyyy 'at' hh:mm a"}}</td>
+            </ng-container>
+  
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+            <!-- No data row -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
+  
+        <mat-paginator [pageSizeOptions]="[7, 16, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
+  

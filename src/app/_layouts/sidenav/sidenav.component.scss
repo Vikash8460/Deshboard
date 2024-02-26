@@ -1,0 +1,97 @@
+:host {
+    .mat-icon {
+      vertical-align: middle;
+      margin-right: 1rem;
+    }
+  }
+  .logo {
+    text-align: center;
+    padding: 2.6rem 1rem;
+    img {
+      width: 200px;
+    }
+  }
+  .mat-divider {
+    border-top-width: 2px;
+    border-color: white;
+  }
+  .mat-list-item {
+    color: #94a3b8 !important;
+    font-size: 0.8rem;
+    height: 44px !important;
+    margin-bottom: 4px;
+    &:hover {
+      color: #f2f5f7 !important;
+    }
+    ::ng-deep {
+      .mat-list-item-content {
+        border-radius: 5px;
+        margin: 0 8px;
+        &:hover {
+          background: #2c3344 !important;
+        }
+      }
+    }
+  }
+  .list-item-active {
+    background: #2c3344 !important;
+     border-radius: 0 2rem 2rem 0;
+     &:hover {
+      background:#2c3344
+     }
+  
+    color: #f2f5f7 !important;
+    ::ng-deep {
+      .mat-list-item-content {
+        background: #2c3344 !important;
+        &:hover {
+          background: #2c3344 !important;
+        }
+      }
+    }
+  }
+  .mat-subheader {
+    color: #818cf8;
+    font-size: 0.6rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+ .DD{
+  color: white;
+ }
+
+ /* Accordion General Styling */
+.example-headers-align .mat-expansion-panel-header {
+  color: #333; /* Text Color */
+  background-color: #3b3f3e; /* Header Background Color */
+  border-bottom: 1px solid #3b3f3e; /* Bottom border for each header */
+}
+
+/* Icon Styling */
+.example-headers-align .mat-icon {
+  color: white; /* Icon Color */
+  margin-right: 12px; /* Space between icon and text */
+}
+
+/* Title Styling */
+.example-headers-align .mat-panel-title {
+  font-weight: bold; /* Title Font Weight */
+}
+
+/* Nav List Styling */
+.example-headers-align mat-nav-list a.mat-list-item {
+  color: #333; /* List Item Text Color */
+  padding-left: 40px; /* Indent List Items for better alignment */
+}
+
+/* Active Link Styling */
+.example-headers-align mat-nav-list a.mat-list-item.active, 
+.example-headers-align mat-nav-list a.mat-list-item:focus, 
+.example-headers-align mat-nav-list a.mat-list-item:hover {
+  background-color:#3b3f3e /* Background Color for Active/Hover/Focus */
+}
+
+/* Customizing the Expansion Indicator */
+.example-headers-align .mat-expansion-indicator::after {
+  border-color: #e01d1d; /* Change the color of the expansion arrow */
+}
