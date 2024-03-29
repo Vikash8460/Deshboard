@@ -53,13 +53,11 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: () => {
           alert("Login Successfully!");
-          // get return url from query parameters or default to home page
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/admin';
           this.router.navigateByUrl(returnUrl);
         },
         error: error => {
           console.log("error")
-          ///.alertService.error(error);
           this.loading = false;
         }
       });

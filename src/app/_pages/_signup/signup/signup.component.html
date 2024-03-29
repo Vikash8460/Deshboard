@@ -1,80 +1,106 @@
 <!-- Section: Design Block -->
 <section class="text-center">
-    <!-- Background image -->
-    <div class="p-5 bg-image" style="
-          background-image: url('https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg');"></div>
-    <!-- Background image -->
-  
-    <div class="card mx-4 mx-md-5 shadow-5-strong">
-      <div class="card-body py-5 px-md-5">
-  
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form>
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="row">
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="formFirstname" class="form-control" placeholder="First name" />
-                  </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                  <div class="form-outline">
-                    <input type="text" id="formLastname" class="form-control" placeholder="Last name" />
+  <!-- Background image -->
+  <div class="p-5 bg-image"
+    style="
+          background-image: url('https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg');">
+  </div>
+  <!-- Background image -->
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong">
+    <div class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Sign up now</h2>
+          <form [formGroup]="signupform" (ngSubmit)="onSubmit()">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input formControlName="userId" name="userId" type="text" id="formUserid" class="form-control"
+                    placeholder="User Id" [ngClass]="{ 'is-invalid': submitted && f.userId.errors }" />
+                  <div *ngIf="submitted && f.userId.errors" class="invalid-feedback">
+                    <div style="margin-right: 55%;" *ngIf="f.userId.errors.required">Username is required</div>
+                    <div style="margin-right: 15%;" *ngIf="f.userId.errors.minlength">Username must be at least 6
+                      characters </div>
+                     
                   </div>
                 </div>
               </div>
-  
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="formEmail" class="form-control" placeholder="Email address" />
+
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input formControlName="mobile" name="mobile" type="text" id="formMobile" class="form-control"
+                    placeholder="Mobile Number" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                  <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                    <div style="margin-right: 55%;" *ngIf="f.mobile.errors.required">Mobile is required</div>
+                    <div style="margin-right: 40%;" *ngIf="f.mobile.errors.minlength">Mobile must be at least 10 </div>
+                    <div style="margin-right: 40%;" *ngIf="f.mobile.errors.maxlength">Mobile must be at most 12 </div>
+                    <div style="margin-right: 30%;" *ngIf="f.mobile.errors.pattern">Mobile must be valid </div>
+                  </div>
+                </div>
               </div>
-  
-              <!-- Password input -->
-              <div class="form-outline mb-4">
-                <input type="password" id="formPassword" class="form-control" placeholder="Password" />
+
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input formControlName="email" name="email" type="email" id="formEmail" class="form-control"
+                placeholder="Email address" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                <div style="margin-right: 80%;" *ngIf="f.email.errors.required">Email is required</div>
+                <div style="margin-right: 65%;" *ngIf="f.email.errors.email">Email must be a valid email address </div>
                
               </div>
-  
-              <!-- Checkbox -->
-              <!-- <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="formCheckbox" />
-                <label class="form-check-label" for="formCheckbox">
-                  Save data
-                </label>
-              </div> -->
-  
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign up
-              </button>
-              <p class="small fw-bold mt-2 pt-1 mb-0"> Already have an account? <a routerLink="/login" 
+
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input formControlName="password" name="password" type="password" id="formPassword" class="form-control"
+                placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div style="margin-right: 80%;" *ngIf="f.password.errors.required">Password is required</div>
+                  <div style="margin-right: 65%;" *ngIf="f.password.errors.minlength">Password must be at least 6 characters </div>   
+                </div>
+
+            </div>
+
+
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">
+              Sign up
+            </button>
+            <p class="small fw-bold mt-2 pt-1 mb-0"> Already have an account? <a routerLink="/login"
                 class="link-danger">Login</a></p>
-  
-              <!-- Register buttons -->
-              <div class="text-center">
-                <p>or sign up with:</p>
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-facebook"></i>
-                </button>
-  
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-google"></i>
-                </button>
-  
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-twitter"></i>
-                </button>
-  
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-github"></i>
-                </button>
-              </div>
-            </form>
-          </div>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>or sign up with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook"></i>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button>
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
-  </section>
-  <!-- Section: Design Block -->
+  </div>
+</section>
+<!-- Section: Design Block -->

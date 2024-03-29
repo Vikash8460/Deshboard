@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AlertComponent } from './_pages/_alerl/alert/alert.component';
 import { LoginComponent } from './_pages/_login/login/login.component';
 import { SignupComponent } from './_pages/_signup/signup/signup.component';
 import { NotFoundComponent } from './_pages/_not-found/not-found/not-found.component';
@@ -19,7 +18,6 @@ import { ServerErrorComponent } from './_pages/server-error/server-error.compone
 @NgModule({
   declarations: [
     AppComponent,
-    AlertComponent,
     LoginComponent,
     SignupComponent,
     NotFoundComponent,

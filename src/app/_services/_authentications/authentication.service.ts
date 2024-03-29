@@ -17,16 +17,16 @@ export class AuthenticationService {
 
   constructor(
     private router: Router,
-    private http: HttpClient
-  ) {
+    private http: HttpClient) {
     this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
     this.user = this.userSubject.asObservable();
+    
   }
 
   public get userValue() {
     return this.userSubject.value;
   }
-  
+
   login(username: string, password: string) {
     return this.http.post<User>(`${environment.apiUrl}/api/login`, { username, password })
       .pipe(map(user => {
@@ -44,7 +44,7 @@ export class AuthenticationService {
     this.router.navigate(['/login']);
   }
 
-  signin(user: User) {
+  signup(user: User) {
     return this.http.post(`${environment.apiUrl}/api/signup`, user);
   }
 

@@ -35,6 +35,13 @@ import { HeaderComponent } from '../../_layouts/header/header.component';
 import { LayoutComponent } from '../../_layouts/layout/layout.component';
 import { SidenavComponent } from '../../_layouts/sidenav/sidenav.component';
 import { ProfileComponent } from '../../_components/profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../../app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -51,6 +58,12 @@ import { ProfileComponent } from '../../_components/profile/profile.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
+//BrowserModule,
+    FontAwesomeModule,
+    ReactiveFormsModule,
+    FormsModule,
+//HttpClientModule,
+//BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
